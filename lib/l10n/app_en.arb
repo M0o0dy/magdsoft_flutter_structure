@@ -1,0 +1,70 @@
+{
+  "language": "English",
+  "@language": {
+    "description": "The current Language"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Email"
+  },
+  "emailFieldEmpty": "Email field can't be empty",
+  "@emailFieldEmpty": {
+    "description": "Email field can't be empty"
+  },
+  "passwordFieldEmpty": "Password field can't be empty",
+  "@passwordFieldEmpty": {
+    "description": "Password field can't be empty"
+  },
+  "confirmPasswordFieldEmpty": "Confirmation field can't be empty",
+  "@confirmPasswordFieldEmpty": {
+    "description": "Confirmation field can't be empty"
+  },
+  "nameFieldEmpty": "Name field can't be empty",
+  "@nameFieldEmpty": {
+    "description": "Name field can't be empty"
+  },
+  "phoneFieldEmpty": "Phone field can't be empty",
+  "@phoneFieldEmpty": {
+    "description": "Phone field can't be empty"
+  },
+  "wrongPassword": "Your password is wrong",
+  "@wrongPassword": {
+    "description": "Your password is wrong"
+  },
+  "name": "Name",
+  "@name": {
+    "description": "Name"
+  },
+  "fullName": "Full Name",
+  "@fullName": {
+    "description": "Full Name"
+  },
+  "phone": "Phone",
+  "@phone": {
+    "description": "Phone"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "Password"
+  },
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "description": "Confirm Password"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Login"
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout"
+  },
+  "register": "Register",
+  "@register": {
+    "description": "Register"
+  },
+  "userData": "User Data",
+  "@userData": {
+    "description": "User Data"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "language": "عربي",
+  "email": "الإيميل",
+  "emailFieldEmpty": "لا يمكن ترك حقل الإيميل فارغ",
+  "passwordFieldEmpty": "لا يمكن ترك حقل كلمة السر فارغ",
+  "confirmPasswordFieldEmpty": "لا يمكن ترك حقل تأكيد كلمة السر فارغ",
+  "wrongPassword": "كلمة السر خاطئة",
+  "nameFieldEmpty": "لا يمكن ترك حقل الإسم فارغ",
+  "phoneFieldEmpty": "لا يمكن ترك حقل رقم الموبايل فارغ",
+  "name": "الإسم",
+  "fullName": "الإسم بالكامل",
+  "phone": "رقم الموبايل",
+  "password": "كلمة السر",
+  "confirmPassword": "تأكيد كلمة السر",
+  "login": "تسجيل دخول",
+  "logout": "تسجيل خروج",
+  "register": "حساب جديد",
+  "userData": "بيانات الحساب"
+}

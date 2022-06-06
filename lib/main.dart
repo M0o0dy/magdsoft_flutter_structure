@@ -8,27 +8,33 @@ import 'package:magdsoft_flutter_structure/business_logic/bloc_observer.dart';
 import 'package:magdsoft_flutter_structure/business_logic/global_cubit/global_cubit.dart';
 import 'package:magdsoft_flutter_structure/data/local/cache_helper.dart';
 import 'package:magdsoft_flutter_structure/data/remote/dio_helper.dart';
+import 'package:magdsoft_flutter_structure/l10n/l10n.dart';
 import 'package:magdsoft_flutter_structure/presentation/router/app_router.dart';
+import 'package:magdsoft_flutter_structure/presentation/screens/login/login.dart';
+import 'package:magdsoft_flutter_structure/presentation/styles/colors.dart';
 import 'package:magdsoft_flutter_structure/presentation/widget/toast.dart';
 import 'package:sizer/sizer.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 late LocalizationDelegate delegate;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  DioHelper.init();
+  await CacheHelper.init();
+  final locale =
+      CacheHelper.getDataFromSharedPreference(key: 'language') ?? "ar";
+  delegate = await LocalizationDelegate.create(
+    fallbackLocale: locale,
+    supportedLocales: ['ar', 'en'],
+  );
+  await delegate.changeLocale(Locale(locale));
   BlocOverrides.runZoned(
         () async {
-      DioHelper.init();
-      await CacheHelper.init();
-      final locale =
-          CacheHelper.getDataFromSharedPreference(key: 'language') ?? "ar";
-      delegate = await LocalizationDelegate.create(
-        fallbackLocale: locale,
-        supportedLocales: ['ar', 'en'],
-      );
-      await delegate.changeLocale(Locale(locale));
+
+
       runApp(MyApp(
         appRouter: AppRouter(),
       ));
@@ -83,26 +89,30 @@ class _MyAppState extends State<MyApp> {
                 delegate,
                 LayoutBuilder(builder: (context, constraints) {
                   return MaterialApp(
+                    home: LoginScreen(),
                     debugShowCheckedModeBanner: false,
                     title: 'Werash',
-                    localizationsDelegates: [
+
+                    localizationsDelegates: const [
+                      AppLocalizations.delegate,
                       GlobalCupertinoLocalizations.delegate,
-                      DefaultCupertinoLocalizations.delegate,
                       GlobalMaterialLocalizations.delegate,
                       GlobalWidgetsLocalizations.delegate,
-                      delegate,
                     ],
                     locale: delegate.currentLocale,
-                    supportedLocales: delegate.supportedLocales,
+                    supportedLocales: L10n.all,
                     onGenerateRoute: widget.appRouter.onGenerateRoute,
                     theme: ThemeData(
-                      fontFamily: 'cairo',
+                      fontFamily: 'Segoe_UI',
+
                       //scaffoldBackgroundColor: AppColors.white,
-                      appBarTheme: const AppBarTheme(
-                        elevation: 0.0,
-                        systemOverlayStyle: SystemUiOverlayStyle(
-                          //statusBarColor: AppColors.transparent,
-                          statusBarIconBrightness: Brightness.dark,
+
+                      appBarTheme:   AppBarTheme(
+                        elevation: 0.0,color: AppColor.blue,
+                        systemOverlayStyle: const SystemUiOverlayStyle(
+                          statusBarColor: Colors.transparent,
+                          systemStatusBarContrastEnforced: false,
+                          statusBarIconBrightness: Brightness.light,
                         ),
                       ),
                     ),
