@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:magdsoft_flutter_structure/business_logic/bloc_observer.dart';
-import 'package:magdsoft_flutter_structure/business_logic/global_cubit/global_cubit.dart';
 import 'package:magdsoft_flutter_structure/data/local/cache_helper.dart';
 import 'package:magdsoft_flutter_structure/data/remote/dio_helper.dart';
 import 'package:magdsoft_flutter_structure/l10n/l10n.dart';
@@ -16,8 +15,9 @@ import 'package:magdsoft_flutter_structure/presentation/widget/toast.dart';
 import 'package:sizer/sizer.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-
+import '../../../business_logic/global_cubit/global_cubit.dart';
+import '../../../business_logic/global_cubit/global_state.dart';
+import 'business_logic/form_field_cubit/cubit.dart';
 late LocalizationDelegate delegate;
 
 Future<void> main() async {
@@ -78,6 +78,9 @@ class _MyAppState extends State<MyApp> {
       providers: [
         BlocProvider(
           create: ((context) => GlobalCubit()),
+        ),
+        BlocProvider(
+          create: ((context) => FormFieldCubit()),
         ),
       ],
       child: BlocConsumer<GlobalCubit, GlobalState>(

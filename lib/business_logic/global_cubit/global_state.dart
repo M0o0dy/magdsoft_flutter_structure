@@ -1,6 +1,6 @@
-part of 'global_cubit.dart';
 
-@immutable
+import '../../data/models/account_model.dart';
+
 abstract class GlobalState {}
 
 class GlobalInitial extends GlobalState {}
@@ -17,20 +17,14 @@ class LoginErrorState extends GlobalState {
   LoginErrorState(this.error);
 }
 
-class LoginVisibilityState extends GlobalState {}
-
 class RegisterLoadingState extends GlobalState {}
 
-class RegisterSuccessState extends GlobalState {
-  final AccountModel accountModel;
-  RegisterSuccessState(this.accountModel);
-}
+class RegisterSuccessState extends GlobalState {}
 
 class RegisterErrorState extends GlobalState {
   final String error;
   RegisterErrorState(this.error);
 }
-class RegisterVisibilityState extends GlobalState {}
 
 class ChangeToEnLangState extends GlobalState {}
 

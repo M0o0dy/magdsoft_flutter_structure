@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:magdsoft_flutter_structure/business_logic/global_cubit/global_cubit.dart';
 import 'package:magdsoft_flutter_structure/data/models/account_model.dart';
 import 'package:magdsoft_flutter_structure/presentation/screens/login/login.dart';
 import 'package:magdsoft_flutter_structure/presentation/styles/colors.dart';
 import 'package:magdsoft_flutter_structure/presentation/widget/default_button.dart';
 import 'package:magdsoft_flutter_structure/presentation/widget/navigator.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-class UserScreen extends StatelessWidget {
+import '../../../business_logic/global_cubit/global_cubit.dart';
+import '../../../business_logic/global_cubit/global_state.dart';class UserScreen extends StatelessWidget {
   late AccountModel accountModel;
 
    UserScreen(this.accountModel,{Key? key}) : super(key: key);

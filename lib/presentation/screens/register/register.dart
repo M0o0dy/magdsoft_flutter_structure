@@ -2,21 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_conditional_rendering/conditional.dart';
-import 'package:magdsoft_flutter_structure/data/models/account_model.dart';
 import 'package:magdsoft_flutter_structure/presentation/screens/login/login.dart';
 import 'package:magdsoft_flutter_structure/presentation/screens/user/user_profile.dart';
 import 'package:magdsoft_flutter_structure/presentation/styles/colors.dart';
-import 'package:magdsoft_flutter_structure/presentation/view/login_view.dart';
 import 'package:magdsoft_flutter_structure/presentation/view/register_view.dart';
 import 'package:magdsoft_flutter_structure/presentation/widget/default_button.dart';
-import 'package:magdsoft_flutter_structure/presentation/widget/default_text_form_field.dart';
 import 'package:magdsoft_flutter_structure/presentation/widget/navigator.dart';
-import 'package:magdsoft_flutter_structure/presentation/widget/toast.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 import '../../../business_logic/global_cubit/global_cubit.dart';
-
-class RegisterScreen extends StatelessWidget {
+import '../../../business_logic/global_cubit/global_state.dart';class RegisterScreen extends StatelessWidget {
   const RegisterScreen({Key? key}) : super(key: key);
 
   @override
@@ -37,8 +31,8 @@ class RegisterScreen extends StatelessWidget {
       var cubit = GlobalCubit.get(context);
       return Scaffold(
         body: Container(
-          width: 412,
-          height: 870,
+          width: double.infinity,
+          height: double.infinity,
           color: AppColor.blue,
           child: SafeArea(
             minimum: const EdgeInsets.only(top: 26),

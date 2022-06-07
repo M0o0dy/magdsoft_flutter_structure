@@ -6,14 +6,11 @@ import 'package:magdsoft_flutter_structure/presentation/screens/register/registe
 import 'package:magdsoft_flutter_structure/presentation/screens/user/user_profile.dart';
 import 'package:magdsoft_flutter_structure/presentation/styles/colors.dart';
 import 'package:magdsoft_flutter_structure/presentation/view/login_view.dart';
-import 'package:magdsoft_flutter_structure/presentation/view/register_view.dart';
 import 'package:magdsoft_flutter_structure/presentation/widget/default_button.dart';
-import 'package:magdsoft_flutter_structure/presentation/widget/default_text_form_field.dart';
 import 'package:magdsoft_flutter_structure/presentation/widget/navigator.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 import '../../../business_logic/global_cubit/global_cubit.dart';
-
+import '../../../business_logic/global_cubit/global_state.dart';
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -32,10 +29,11 @@ class LoginScreen extends StatelessWidget {
           var formKey = GlobalKey<FormState>();
           var cubit = GlobalCubit.get(context);
           return Container(
-            width: 412,
-            height: 870,
+            width: double.infinity,
+            height: double.infinity,
             color: AppColor.blue,
             child: SafeArea(
+              bottom: false,
               minimum: const EdgeInsets.only(top: 26),
               child: Form(
                 key: formKey,
@@ -51,12 +49,14 @@ class LoginScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               Container(
+                                padding: EdgeInsets.zero,
                                 width: 84,
                                 height: 31,
                                 clipBehavior: Clip.antiAlias,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10)),
                                 child: MaterialButton(
+                                  padding: EdgeInsets.zero,
                                   onPressed: () {
                                     cubit.changeLang(context);
 
